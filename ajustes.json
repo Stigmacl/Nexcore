@@ -1,5 +1,5 @@
 {
-  "version": "0.6.71",
+  "version": "0.6.72",
   "ajustes": [
     {
       "id": "energia",
@@ -475,7 +475,7 @@
     {
       "id": "serviciosretrasados",
       "nombre": "Retrasar servicios de programas al iniciar",
-      "descripcion": "3 servicios de programas (actualizadores y ayudantes) parten unos 2 minutos después de entrar, cuando el escritorio ya está listo: Acer Device Management Framework, ChatGPT, Claude.",
+      "descripcion": "1 servicio de programas (actualizadores y ayudantes) parten unos 2 minutos después de entrar, cuando el escritorio ya está listo: Acer Device Management Framework.",
       "nota": "Nunca toca servicios de Windows, antivirus, audio, Bluetooth, touchpad, VPN, acceso remoto ni temperatura.",
       "grupo": "optimizacion",
       "perfiles": [

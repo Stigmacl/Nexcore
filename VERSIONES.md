@@ -6,6 +6,7 @@ Descarga oficial: https://nexcore.tacticalopschile.cl
 
 | Versión | SHA-256 | VirusTotal |
 |---|---|---|
+| 0.6.72 | `9fb460595a1a0411f34e3b39ea134c91382452fb3291a994ffc9451ac0b7ea41` | [análisis](https://www.virustotal.com/gui/file/9fb460595a1a0411f34e3b39ea134c91382452fb3291a994ffc9451ac0b7ea41) |
 | 0.6.71 | `10e8adc9560f9722b04d788eeffe0713278bca1a9e361d25d02be52df7931b66` | [análisis](https://www.virustotal.com/gui/file/10e8adc9560f9722b04d788eeffe0713278bca1a9e361d25d02be52df7931b66) |
 | 0.6.70 | `940c607c426df1a23ba57f52690575725e1695aecb57249a1740705df801ffdf` | [análisis](https://www.virustotal.com/gui/file/940c607c426df1a23ba57f52690575725e1695aecb57249a1740705df801ffdf) |
 | 0.6.69 | `201cd675c133cffa0b83eda9bf958a337a934c9981548a007859a7d3e9cd24d0` | [análisis](https://www.virustotal.com/gui/file/201cd675c133cffa0b83eda9bf958a337a934c9981548a007859a7d3e9cd24d0) |

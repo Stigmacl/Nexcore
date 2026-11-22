@@ -1,4 +1,4 @@
-# Lista completa de ajustes de NexCore 0.6.71
+# Lista completa de ajustes de NexCore 0.6.72
 
 Todo lo que NexCore **puede** cambiar en Windows. Nada se aplica solo: tú eliges cada ajuste, NexCore guarda el valor anterior antes de tocar nada y todo se deshace desde **Optimización → Historial**.
 
@@ -172,7 +172,7 @@ Al apagar, Windows guarda su núcleo y arranca en menos tiempo. Con disco mecán
 | `HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Power` | `HiberbootEnabled` | 1 |
 
 ### Retrasar servicios de programas al iniciar  `serviciosretrasados`
-3 servicios de programas (actualizadores y ayudantes) parten unos 2 minutos después de entrar, cuando el escritorio ya está listo: Acer Device Management Framework, ChatGPT, Claude.
+1 servicio de programas (actualizadores y ayudantes) parten unos 2 minutos después de entrar, cuando el escritorio ya está listo: Acer Device Management Framework.
 <br>_Recomendado en: Modo liviano, Oficina, Teletrabajo · Requiere reiniciar · Nunca toca servicios de Windows, antivirus, audio, Bluetooth, touchpad, VPN, acceso remoto ni temperatura._
 
 Acción propia (no es solo un valor del registro): se describe arriba y también guarda el estado anterior para deshacer.
