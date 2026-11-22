@@ -1,0 +1,994 @@
+{
+  "version": "0.6.71",
+  "ajustes": [
+    {
+      "id": "energia",
+      "nombre": "Plan de energía de alto rendimiento",
+      "descripcion": "El procesador no baja su velocidad para ahorrar energía.",
+      "nota": "En notebooks gasta más batería: ideal enchufado.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "creador",
+        "stream"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "gamedvr",
+      "nombre": "Apagar la grabación en segundo plano",
+      "descripcion": "La Xbox Game Bar deja de grabar los juegos todo el rato. Libera procesador y tarjeta de video.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "creador",
+        "basico",
+        "stream"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "System\\GameConfigStore",
+          "nombre": "GameDVR_Enabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\GameDVR",
+          "nombre": "AppCaptureEnabled",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "redahorro",
+      "nombre": "Que Windows no apague la tarjeta de red",
+      "descripcion": "Evita cortes del WiFi o del cable cuando Windows intenta ahorrar energía.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "teletrabajo",
+        "stream"
+      ],
+      "reinicio": "reiniciar",
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e972-e325-11ce-bfc1-08002be10318}\\NNNN",
+          "nombre": "PnPCapabilities",
+          "valor": 24
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "modojuego",
+      "nombre": "Activar el modo de juego",
+      "descripcion": "Windows da prioridad al juego abierto y no instala actualizaciones mientras juegas.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\GameBar",
+          "nombre": "AutoGameModeEnabled",
+          "valor": 1
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\GameBar",
+          "nombre": "AllowAutoGameMode",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "hags",
+      "nombre": "Programación de GPU acelerada por hardware",
+      "descripcion": "La tarjeta de video organiza su propio trabajo: menos retraso y algo más de rendimiento.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "creador",
+        "stream"
+      ],
+      "reinicio": "reiniciar",
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Control\\GraphicsDrivers",
+          "nombre": "HwSchMode",
+          "valor": 2
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "ventana",
+      "nombre": "Optimizaciones para juegos en ventana",
+      "descripcion": "Los juegos en ventana o sin bordes responden como en pantalla completa: menos retraso.",
+      "nota": "Disponible en Windows 11.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "prioridadjuegos",
+      "nombre": "Prioridad para juegos y multimedia",
+      "descripcion": "Windows deja de frenar la red y reserva menos procesador para tareas de fondo.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
+          "nombre": "NetworkThrottlingIndex",
+          "valor": -1
+        },
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Multimedia\\SystemProfile",
+          "nombre": "SystemResponsiveness",
+          "valor": 10
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "p2p",
+      "nombre": "No compartir actualizaciones con otros PCs",
+      "descripcion": "Windows deja de usar tu internet para enviar actualizaciones a otros equipos.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "teletrabajo",
+        "basico",
+        "stream",
+        "oficina",
+        "creador"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Windows\\DeliveryOptimization",
+          "nombre": "DODownloadMode",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "sugerencias",
+      "nombre": "Quitar sugerencias y apps promocionadas",
+      "descripcion": "Sin anuncios en el menú Inicio ni apps que se instalan solas.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "teletrabajo",
+        "creador",
+        "oficina",
+        "basico",
+        "stream"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SilentInstalledAppsEnabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SystemPaneSuggestionsEnabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SoftLandingEnabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SubscribedContent-338388Enabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SubscribedContent-338389Enabled",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "segundoplano",
+      "nombre": "Apps de la Tienda sin funcionar en segundo plano",
+      "descripcion": "Las apps de Microsoft Store dejan de correr cuando no las usas.",
+      "nota": "Las notificaciones de esas apps pueden llegar con atraso.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "basico"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\BackgroundAccessApplications",
+          "nombre": "GlobalUserDisabled",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "efectos",
+      "nombre": "Efectos visuales en modo rendimiento",
+      "descripcion": "Sin animaciones ni transparencias: las ventanas se abren más rápido en equipos lentos.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "basico"
+      ],
+      "reinicio": "cerrar sesión",
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\VisualEffects",
+          "nombre": "VisualFXSetting",
+          "valor": 2
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize",
+          "nombre": "EnableTransparency",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "telemetria",
+      "nombre": "Telemetría de Windows al mínimo",
+      "descripcion": "Windows envía menos datos de uso a Microsoft y usa menos disco en segundo plano.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "oficina",
+        "basico"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Windows\\DataCollection",
+          "nombre": "AllowTelemetry",
+          "valor": 0
+        },
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Services\\DiagTrack",
+          "nombre": "Start",
+          "valor": 4
+        }
+      ],
+      "servicios": [
+        "DiagTrack"
+      ],
+      "accionPropia": false
+    },
+    {
+      "id": "sysmain",
+      "nombre": "Desactivar SysMain (precarga de programas)",
+      "descripcion": "En equipos con disco mecánico y poca RAM suele dejar el disco al 100 %.",
+      "nota": "En equipos con SSD conviene dejarlo activo.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "basico"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Services\\SysMain",
+          "nombre": "Start",
+          "valor": 4
+        }
+      ],
+      "servicios": [
+        "SysMain"
+      ],
+      "accionPropia": false
+    },
+    {
+      "id": "indexado",
+      "nombre": "Desactivar el indexado de búsqueda",
+      "descripcion": "Windows deja de recorrer el disco para indexar archivos.",
+      "nota": "La búsqueda del menú Inicio y de Outlook será más lenta.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "basico"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Services\\WSearch",
+          "nombre": "Start",
+          "valor": 4
+        }
+      ],
+      "servicios": [
+        "WSearch"
+      ],
+      "accionPropia": false
+    },
+    {
+      "id": "ducking",
+      "nombre": "Que Windows no baje el volumen en llamadas",
+      "descripcion": "Al hablar por Discord, Teams o Zoom, el juego y la música siguen con su volumen normal.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "teletrabajo",
+        "stream",
+        "gamer"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Multimedia\\Audio",
+          "nombre": "UserDuckingPreference",
+          "valor": 3
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "busquedaweb",
+      "nombre": "Búsqueda del menú Inicio sin resultados de internet",
+      "descripcion": "La búsqueda muestra solo tus programas y archivos: responde más rápido y sin publicidad.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "oficina",
+        "teletrabajo",
+        "basico"
+      ],
+      "reinicio": "cerrar sesión",
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Policies\\Microsoft\\Windows\\Explorer",
+          "nombre": "DisableSearchBoxSuggestions",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "inicioapps",
+      "nombre": "Programas de inicio sin espera",
+      "descripcion": "Windows abre tus programas de inicio apenas entras, sin la pausa de unos segundos.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "oficina",
+        "teletrabajo"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Serialize",
+          "nombre": "StartupDelayInMSec",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "ultimoacceso",
+      "nombre": "Sin registrar la fecha de último acceso",
+      "descripcion": "Windows deja de escribir en el disco cada vez que abres un archivo o una carpeta. En discos mecánicos las carpetas abren más rápido.",
+      "nota": "Algunos programas de respaldo usan esa fecha; la de modificación se sigue guardando.",
+      "grupo": "optimizacion",
+      "perfiles": [],
+      "reinicio": "reiniciar",
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Control\\FileSystem",
+          "nombre": "NtfsDisableLastAccessUpdate",
+          "valor": -2147483647
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "iniciorapido",
+      "nombre": "Inicio rápido de Windows",
+      "descripcion": "Al apagar, Windows guarda su núcleo y arranca en menos tiempo. Con disco mecánico el arranque se acorta bastante.",
+      "nota": "Si usas otro sistema en el mismo equipo (doble arranque), déjalo apagado.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "basico",
+        "oficina"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Power",
+          "nombre": "HiberbootEnabled",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "serviciosretrasados",
+      "nombre": "Retrasar servicios de programas al iniciar",
+      "descripcion": "3 servicios de programas (actualizadores y ayudantes) parten unos 2 minutos después de entrar, cuando el escritorio ya está listo: Acer Device Management Framework, ChatGPT, Claude.",
+      "nota": "Nunca toca servicios de Windows, antivirus, audio, Bluetooth, touchpad, VPN, acceso remoto ni temperatura.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "basico",
+        "oficina",
+        "teletrabajo"
+      ],
+      "reinicio": "reiniciar",
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "dnsrapido",
+      "nombre": "DNS más rápido (automático)",
+      "descripcion": "Mide Cloudflare, Google, Quad9 y OpenDNS contra el DNS de tu proveedor y deja el que responde más rápido. Las páginas, juegos y apps encuentran sus servidores antes. Si el tuyo ya es el más rápido, no cambia nada.",
+      "nota": "Solo cambia la conexión activa. No toca equipos de empresa, VPN ni redes con DNS propio (Pi-hole).",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream",
+        "teletrabajo",
+        "creador",
+        "oficina",
+        "basico"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "mouse",
+      "nombre": "Mouse sin aceleración",
+      "descripcion": "Apaga «Mejorar la precisión del puntero»: el cursor y la mira se mueven siempre lo mismo para el mismo gesto. Más puntería en juegos de disparos.",
+      "nota": "Al principio el mouse puede sentirse más lento; ajusta la sensibilidad en el juego o en el software del mouse.",
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "usb",
+      "nombre": "Mantener activos los dispositivos USB",
+      "descripcion": "Windows deja de apagar audífonos, micrófonos, cámaras, capturadoras y discos USB para ahorrar energía. Evita cortes en llamadas, transmisiones y exportaciones.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "teletrabajo",
+        "stream",
+        "creador"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "wifiahorro",
+      "nombre": "WiFi sin ahorro de energía",
+      "descripcion": "El adaptador inalámbrico trabaja a máximo rendimiento: menos saltos de ping y cortes en llamadas.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "teletrabajo",
+        "stream",
+        "gamer"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "widgets",
+      "nombre": "Widgets y noticias de la barra de tareas",
+      "descripcion": "Quita el panel de noticias, clima y anuncios, que se carga en segundo plano.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": "cerrar sesión",
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Dsh",
+          "nombre": "AllowNewsAndInterests",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "copilot",
+      "nombre": "Copilot de Windows",
+      "descripcion": "Desactiva el asistente Copilot integrado en Windows.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": "cerrar sesión",
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Policies\\Microsoft\\Windows\\WindowsCopilot",
+          "nombre": "TurnOffWindowsCopilot",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "recall",
+      "nombre": "Recall (capturas de pantalla con IA)",
+      "descripcion": "Windows deja de guardar capturas de lo que haces para buscarlas con IA. Ahorra disco y protege tu privacidad.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Policies\\Microsoft\\Windows\\WindowsAI",
+          "nombre": "DisableAIDataAnalysis",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "publicidad",
+      "nombre": "ID de publicidad",
+      "descripcion": "Las apps dejan de usar un identificador para mostrarte anuncios personalizados.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\AdvertisingInfo",
+          "nombre": "Enabled",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "inicio-recomendaciones",
+      "nombre": "Apps recomendadas en el menú Inicio",
+      "descripcion": "El menú Inicio deja de promocionar apps de la Tienda.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+          "nombre": "Start_IrisRecommendations",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "consejos",
+      "nombre": "Sugerencias en Configuración y al iniciar",
+      "descripcion": "Sin contenido sugerido en Configuración ni la pantalla de «terminemos de configurar tu equipo».",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SubscribedContent-338393Enabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SubscribedContent-353694Enabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SubscribedContent-353696Enabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SubscribedContent-310093Enabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\UserProfileEngagement",
+          "nombre": "ScoobeSystemSettingEnabled",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "bloqueo-anuncios",
+      "nombre": "Anuncios en la pantalla de bloqueo",
+      "descripcion": "Quita datos curiosos, consejos y promociones de la pantalla de bloqueo.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "RotatingLockScreenOverlayEnabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\ContentDeliveryManager",
+          "nombre": "SubscribedContent-338387Enabled",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "edge-fondo",
+      "nombre": "Edge abierto en segundo plano",
+      "descripcion": "Edge deja de cargarse al iniciar Windows y de seguir abierto al cerrarlo. Libera memoria si no lo usas.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Edge",
+          "nombre": "StartupBoostEnabled",
+          "valor": 0
+        },
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Edge",
+          "nombre": "BackgroundModeEnabled",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "actividad",
+      "nombre": "Historial de actividad",
+      "descripcion": "Windows deja de registrar los programas y archivos que abres.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+          "nombre": "PublishUserActivities",
+          "valor": 0
+        },
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Windows\\System",
+          "nombre": "UploadUserActivities",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "finalizartarea",
+      "nombre": "«Finalizar tarea» en la barra de tareas",
+      "descripcion": "Clic derecho en un programa de la barra → «Finalizar tarea». Cierra un juego colgado sin abrir el Administrador de tareas.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream",
+        "creador"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced\\TaskbarDeveloperSettings",
+          "nombre": "TaskbarEndTask",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "teclasespeciales",
+      "nombre": "Sin el aviso de Teclas especiales",
+      "descripcion": "Apretar Shift cinco veces en un juego ya no saca al escritorio con el aviso de Teclas especiales.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream"
+      ],
+      "reinicio": "cerrar sesión",
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "extensiones",
+      "nombre": "Mostrar las extensiones de los archivos",
+      "descripcion": "Ves si un archivo es .exe aunque se llame «mod.pdf». Ayuda a no abrir programas disfrazados.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "oficina",
+        "teletrabajo",
+        "gamer"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced",
+          "nombre": "HideFileExt",
+          "valor": 0
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "noreiniciowu",
+      "nombre": "Windows Update no reinicia con tu sesión abierta",
+      "descripcion": "Las actualizaciones se instalan igual, pero el equipo espera a que tú lo reinicies: no se reinicia en medio de una partida o un trabajo.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream",
+        "teletrabajo",
+        "creador",
+        "oficina",
+        "basico"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\AU",
+          "nombre": "NoAutoRebootWithLoggedOnUsers",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "pantallazodetalle",
+      "nombre": "Pantallazo azul con detalles",
+      "descripcion": "Si Windows se cae, el pantallazo azul muestra el código y el archivo culpable. Sirve para encontrar el driver que falla.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "creador"
+      ],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SYSTEM\\CurrentControlSet\\Control\\CrashControl",
+          "nombre": "DisplayParameters",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "driversvideowu",
+      "nombre": "Windows Update no cambia tus drivers",
+      "descripcion": "Windows deja de reemplazar el driver de video (u otros) que instalaste tú. Útil si un driver nuevo te dio problemas.",
+      "nota": "Los drivers quedan a tu cargo: NexCore te avisa en «Descargas» cuando hay versión nueva.",
+      "grupo": "optimizacion",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate",
+          "nombre": "ExcludeWUDriversInQualityUpdate",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "appsfabricante",
+      "nombre": "Apps del fabricante que se instalan solas",
+      "descripcion": "Al conectar un mouse, teclado o audífono, Windows ya no descarga por su cuenta el programa de la marca.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKLM",
+          "ruta": "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Device Metadata",
+          "nombre": "PreventDeviceMetadataFromNetwork",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "clicktodo",
+      "nombre": "Click to Do (IA de Windows)",
+      "descripcion": "Apaga «Click to Do», que analiza lo que hay en tu pantalla en los equipos Copilot+.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [
+        {
+          "colmena": "HKCU",
+          "ruta": "Software\\Policies\\Microsoft\\Windows\\WindowsAI",
+          "nombre": "DisableClickToDo",
+          "valor": 1
+        }
+      ],
+      "servicios": [],
+      "accionPropia": false
+    },
+    {
+      "id": "telemetriapowershell",
+      "nombre": "Telemetría de PowerShell 7",
+      "descripcion": "PowerShell 7 deja de enviar datos de uso a Microsoft.",
+      "nota": null,
+      "grupo": "debloat",
+      "perfiles": [],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "wifimaximo",
+      "nombre": "WiFi a máximo rendimiento (enchufado)",
+      "descripcion": "El plan de energía deja de bajar la potencia de la tarjeta WiFi: menos cortes y menos ping irregular.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream",
+        "teletrabajo"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "usbsuspension",
+      "nombre": "Sin suspensión selectiva de USB (enchufado)",
+      "descripcion": "Windows deja de apagar los puertos USB sin uso: evita que el mouse, el teclado o los audífonos se desconecten un segundo.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer",
+        "stream"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    },
+    {
+      "id": "pcieahorro",
+      "nombre": "Sin ahorro de energía en PCI Express (enchufado)",
+      "descripcion": "La tarjeta de video y la WiFi no entran en ahorro entre cuadros: menos tirones y micro cortes.",
+      "nota": null,
+      "grupo": "optimizacion",
+      "perfiles": [
+        "gamer"
+      ],
+      "reinicio": null,
+      "registro": [],
+      "servicios": [],
+      "accionPropia": true
+    }
+  ]
+}
