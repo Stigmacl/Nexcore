@@ -15,7 +15,7 @@ param([string]$Exe)
 
 $ErrorActionPreference = 'SilentlyContinue'
 $carpeta = Join-Path $env:APPDATA 'NexCore'
-$repo = 'https://raw.githubusercontent.com/Stigmacl/nexcore-transparencia/main'
+$repo = 'https://raw.githubusercontent.com/Stigmacl/Nexcore/main'
 
 function Titulo($t) { Write-Host ''; Write-Host "== $t ==" -ForegroundColor Cyan }
 
@@ -79,4 +79,4 @@ $tareas = Get-ScheduledTask -ErrorAction SilentlyContinue | Where-Object { $_.Ta
 if ($tareas) { $tareas | ForEach-Object { Write-Host "Tarea: $($_.TaskName) · $($_.State)" } } else { Write-Host 'No hay tareas programadas de NexCore.' }
 
 Titulo 'Listo'
-Write-Host 'Este script no cambió nada en tu equipo. Dudas o reportes: https://github.com/Stigmacl/nexcore-transparencia/issues'
+Write-Host 'Este script no cambió nada en tu equipo. Dudas o reportes: https://github.com/Stigmacl/Nexcore/issues'
