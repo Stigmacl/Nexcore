@@ -17,6 +17,7 @@ Con un **número al azar** que se crea la primera vez que abres NexCore. No es t
 | `ajustes` | Qué ajustes aplicaste o deshiciste (sus identificadores de [AJUSTES.md](AJUSTES.md)). |
 | `limpieza` | Cuánto espacio liberaste. |
 | `dns`, `driver`, `reparar`, `desinstalar`, `revision` | El resultado de esas herramientas (cuántos, si funcionó). En «Desinstalar a fondo» solo la cantidad de elementos borrados, no los nombres. |
+| `recuperar` | Cuántos archivos se revisaron, encontraron y recuperaron (de la Papelera o del disco). **Nunca los nombres ni el contenido de tus archivos.** |
 | `perifericos` | Marca y modelo de mouse, teclado y audífonos (su código VID:PID), para saber qué marcas soportar. |
 | `actualizacion` | Si la actualización automática funcionó. |
 | `error` | El tipo de error y dónde ocurrió dentro del programa. **Antes de enviarlo se borra tu carpeta de usuario y tu nombre de usuario** de los mensajes. |
