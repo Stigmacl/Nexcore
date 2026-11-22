@@ -29,7 +29,7 @@ Evita cortes del WiFi o del cable cuando Windows intenta ahorrar energía.
 
 | Registro | Valor | Queda en |
 |---|---|---|
-| `HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\NNNN (tu tarjeta de red)` | `PnPCapabilities` | 24 |
+| `HKLM\SYSTEM\CurrentControlSet\Control\Class\{4d36e972-e325-11ce-bfc1-08002be10318}\NNNN` | `PnPCapabilities` | 24 |
 
 ### Activar el modo de juego  `modojuego`
 Windows da prioridad al juego abierto y no instala actualizaciones mientras juegas.
