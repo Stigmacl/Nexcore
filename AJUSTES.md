@@ -1,4 +1,4 @@
-# Lista completa de ajustes de NexCore 0.6.75
+# Lista completa de ajustes de NexCore 0.6.76
 
 Todo lo que NexCore **puede** cambiar en Windows. Nada se aplica solo: tú eliges cada ajuste, NexCore guarda el valor anterior antes de tocar nada y todo se deshace desde **Optimización → Historial**.
 
